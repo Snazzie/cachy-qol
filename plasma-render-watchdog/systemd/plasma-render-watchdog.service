@@ -1,0 +1,12 @@
+[Unit]
+Description=Recover Plasma after a fatal Qt renderer failure
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 %h/.local/lib/cachey-qol/plasma-render-watchdog.py
+RuntimeDirectory=plasma-render-watchdog
+RuntimeDirectoryMode=0700
+RuntimeDirectoryPreserve=yes
+TimeoutStartSec=75
+UMask=0077
+NoNewPrivileges=yes
