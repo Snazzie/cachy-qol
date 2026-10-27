@@ -43,3 +43,13 @@ bash uninstall.sh
 ```
 
 Removes only this utility's installed files and override. It does not restart Plasma, reset your panel configuration, or remove other service overrides.
+
+## Verification
+
+The initial installation was smoke-tested against the live Plasma session:
+the real healthy-journal path left Plasma running, a simulated ordinary
+display-disconnect message did not restart it, and simulated fatal-log input
+caused a real shell restart with a new systemd invocation ID. Repeated fatal
+input was suppressed by the persisted cooldown. The installed oneshot service
+subsequently completed successfully and the timer remained active. The fatal
+GPU/display condition itself was not deliberately reproduced.
