@@ -1,0 +1,11 @@
+[Unit]
+Description=Check KDE lock greeter rendering every 15 seconds
+
+[Timer]
+OnStartupSec=30
+OnUnitInactiveSec=15
+AccuracySec=1
+Unit=lock-screen-recovery.service
+
+[Install]
+WantedBy=timers.target

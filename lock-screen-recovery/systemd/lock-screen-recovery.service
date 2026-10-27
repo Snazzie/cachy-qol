@@ -1,0 +1,12 @@
+[Unit]
+Description=Recover KDE Wayland lock greeter after persistent rendering failures
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 %h/.local/lib/cachy-qol/lock-screen-recovery.py
+RuntimeDirectory=lock-screen-recovery
+RuntimeDirectoryMode=0700
+RuntimeDirectoryPreserve=yes
+UMask=0077
+TimeoutStartSec=60
+NoNewPrivileges=yes
